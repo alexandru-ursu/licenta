@@ -1,0 +1,15 @@
+Login and Registration                                                           done
+Initial page (before login & Registration)
+
+Home page for Student
+  -enter quiz code to access quiz
+
+
+Home page for teacher
+  - create quiz
+    1. generate quiz code
+    2. add question
+      2.0 chose question type: multiple choice / write code
+      2.1 add question text
+      2.2 if question type is multiple choice, add answers and correct answer
+          if question is write code => find means of evaluating code
