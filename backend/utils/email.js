@@ -25,7 +25,7 @@ function sendEmail(email, hashedCode) {
     subject: 'Confirm your email address',
 //    text: "Please confirm your email address by pressing the following link:",// localhost:3000/hardstuck/users/confirm?id=".concat(hashedCode),
     // html: "<a href=".concat('\""').concat("localhost:3000/hardstuck/users/confirm?id=").concat(hashedCode).concat('\"').concat("/>")
-    html: '<p>Click <a href="http://'+process.env.IP+':'+process.env.PORT+'/hardstuck/users/confirm?id=' + hashedCode + '">here</a> to activate your account.</p>'
+    html: '<p>Click <a href="http://'+process.env.IP+':'+process.env.PORT+'/licenta/users/confirm?id=' + hashedCode + '">here</a> to activate your account.</p>'
   };
 
   transporter.sendMail(mailOptions, function(error, info){

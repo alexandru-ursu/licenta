@@ -51,7 +51,7 @@ const login = async (email, password) => {
             userId: user._id,
             userRole: user.role
         });
-        const response = {name:user.name, role:user.role, token};
+        const response = {id:user._id, name:user.name, role:user.role, token};
         return response;
     }
     throw new ServerError("Combinatia de username si parola nu este buna!", 404);
@@ -67,8 +67,17 @@ const activate = async (confirmationLink) => {
   console.log("User " + user.name + " confirmed his email");
 }
 
+const getUser = async (userId) => {
+  const user = await Users.findOne({_id:userId});
+  if (user === null) {
+      throw new ServerError(`User not found in database`, 404);
+  }
+  return user;
+}
+
 module.exports = {
     add,
     activate,
-    login
+    login,
+    getUser
 }

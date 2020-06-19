@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 (async () => {
   try {
 
-    //await mongoose.connect(`mongodb://${process.env.MHOST}:${process.env.MPORT}/${process.env.MDATABASE}`,
-    //console.log("connecting to " + `mongodb://${process.env.MUSER}:${process.env.MPASSWORD}@${process.env.MHOST}:${process.env.MPORT}/${process.env.MDATABASE}`);
+    console.log("Connecting to mongo: " + `mongodb://${process.env.MUSER}:${process.env.MPASSWORD}@${process.env.MHOST}:${process.env.MPORT}/${process.env.MDATABASE}`);
     await mongoose.connect(`mongodb://${process.env.MUSER}:${process.env.MPASSWORD}@${process.env.MHOST}:${process.env.MPORT}/${process.env.MDATABASE}`,
       {
         useNewUrlParser: true,
@@ -19,8 +18,14 @@ const mongoose = require('mongoose');
 
 const Users = require('./models/User.js');
 const MCQuestion = require('./models/MCQuestion.js');
+const CodeQuestion = require('./models/CodeQuestion.js');
+const Session = require('./models/Session.js');
+const Exam = require('./models/Exam.js');
 
 module.exports = {
   Users,
-  MCQuestion
+  MCQuestion,
+  CodeQuestion,
+  Exam,
+  Session
 }
